@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".views.AdjustProximityFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:foregroundGravity="top"
-        android:scaleType="fitStart"
-        android:src="@drawable/ic_vector_header_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_adjust_proximity"
@@ -102,8 +92,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="37dp"
         android:layout_marginTop="15dp"
+        android:backgroundTint="@color/colorAccent"
         android:max="10"
+        android:progressBackgroundTint="@color/colorAccent"
         android:progressTint="@color/colorPrimaryDark"
+        android:secondaryProgressTint="@color/colorAccent"
         android:thumbTint="@color/colorPrimaryDark"
         android:tickMark="@drawable/tickmark"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,20 +112,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appCompatSeekBar2" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="24dp"
-        android:background="?android:selectableItemBackground"
-        android:elevation="15dp"
-        android:src="@drawable/ic_arrow_forward"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatSeekBar2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
