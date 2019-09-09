@@ -6,4 +6,7 @@
     <string name="adjust_check_in_proximity">Adjust check-in proximity</string>
     <string name="set_parameters_descr">Set the check-in paramaters. Students can check-in when they\'re within the proximity</string>
     <string name="define_the_radius">Define the radius</string>
+    <string name="set_time">Set the course start time and end time</string>
+    <string name="adjust_time">Adjust check-in time</string>
+    <string name="sample_location_txt">Joyner Library</string>
 </resources>

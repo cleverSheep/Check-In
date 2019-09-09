@@ -48,7 +48,7 @@
         android:fontFamily="@font/bahnscrift"
         android:text="Next"
         android:textColor="@color/colorHighlight"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
