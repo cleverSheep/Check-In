@@ -69,7 +69,7 @@ class AdjustCheckInTimeFragment : Fragment(), DatePickerDialog.OnDateSetListener
 
         to_date.visibility = View.VISIBLE
         to_date_calender.visibility = View.VISIBLE
-        to_date_calender.text = "${MONTHS[months]}, $days @ 9:30 AM"
+        to_date_calender.text = "${MONTHS[months]}, $days @ 10:30 AM"
     }
 
 }
