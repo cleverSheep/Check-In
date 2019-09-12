@@ -50,6 +50,11 @@
             android:layout_height="wrap_content"
             android:src="@drawable/iv_library_proto" />
 
+        <com.clarmoph.attendenceappprototype.views.ProximityCustomView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
