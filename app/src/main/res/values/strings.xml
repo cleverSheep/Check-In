@@ -9,6 +9,6 @@
     <string name="set_time">Set the course start time and end time</string>
     <string name="adjust_time">Adjust check-in time</string>
     <string name="sample_location_txt">Joyner Library</string>
-    <string name="from_date">%1$s, days @ 9:30 AM</string>
-    <string name="to_date"></string>
+    <string name="from_time">%1$s, %2$d @ 9:30 AM</string>
+    <string name="to_time">%1$s, %2$d @ 10:30 AM</string>
 </resources>

@@ -65,11 +65,11 @@ class AdjustCheckInTimeFragment : Fragment(), DatePickerDialog.OnDateSetListener
         btn_checkin_date.visibility = View.INVISIBLE
         from_date.visibility = View.VISIBLE
         from_date_calender.visibility = View.VISIBLE
-        from_date_calender.text = "${MONTHS[months]}, $days @ 9:30 AM"
+        from_date_calender.text = getString(R.string.from_time, MONTHS[months], days)
 
         to_date.visibility = View.VISIBLE
         to_date_calender.visibility = View.VISIBLE
-        to_date_calender.text = "${MONTHS[months]}, $days @ 10:30 AM"
+        to_date_calender.text = getString(R.string.to_time, MONTHS[months], days)
     }
 
 }
