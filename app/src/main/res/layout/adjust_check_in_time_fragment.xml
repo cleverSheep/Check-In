@@ -75,80 +75,17 @@
         android:id="@+id/tv_define_radius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:fontFamily="@font/bahnscrift"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/txt_locationbackground"
+        android:drawableStart="@drawable/ic_locpin"
+        android:drawablePadding="7dp"
+        android:gravity="center"
         android:text="@string/sample_location_txt"
-        android:textColor="@color/colorDarkYellow"
+        android:textColor="#000"
+        android:textIsSelectable="true"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <Button
-        android:id="@+id/btn_checkin_date"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginEnd="4dp"
-        android:background="@drawable/btn_background"
-        android:text="Set Date"
-        android:textColor="#FFF"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_define_radius"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/tv_define_radius" />
-
-    <TextView
-        android:id="@+id/from_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:fontFamily="@font/bahnscrift"
-        android:text="From"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_define_radius"
-        app:layout_constraintStart_toEndOf="@+id/tv_define_radius" />
-
-    <TextView
-        android:id="@+id/from_date_calender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="17dp"
-        android:fontFamily="@font/bahnscrift"
-        android:text="Aug, 7 @ 9:30 AM"
-        android:textAlignment="center"
-        android:textColor="@color/colorDarkYellow"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_define_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/from_date" />
-
-    <TextView
-        android:id="@+id/to_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/bahnscrift"
-        android:text="To"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/from_date"
-        app:layout_constraintTop_toBottomOf="@id/from_date" />
-
-    <TextView
-        android:id="@+id/to_date_calender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/bahnscrift"
-        android:text="Aug, 7 @ 9:30 AM"
-        android:textAlignment="center"
-        android:textColor="@color/colorDarkYellow"
-        android:textSize="15sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/to_date"
-        app:layout_constraintStart_toStartOf="@+id/from_date_calender" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
