@@ -24,8 +24,10 @@
         android:id="@+id/tv_prox_desrc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/bahnscrift"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
         android:text="@string/set_time"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -33,71 +35,77 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_adjust_proximity" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
-        android:src="@drawable/iv_school"
+    <androidx.cardview.widget.CardView
+        style="@style/style_cardview_info"
+        android:layout_width="338dp"
+        android:layout_height="364dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_prox_desrc" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_prox_desrc">
 
-    <TextView
-        android:id="@+id/tv_course_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:fontFamily="@font/bahnscrift"
-        android:text="Public Speaking"
-        android:textColor="@color/colorDarkGray"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_prof_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="11dp"
-        android:fontFamily="@font/bahnscrift"
-        android:text="Professor Richard"
-        android:textColor="@color/colorLightGray"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_course_name" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/iv_school"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_define_radius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/txt_locationbackground"
-        android:drawableStart="@drawable/ic_locpin"
-        android:drawablePadding="7dp"
-        android:gravity="center"
-        android:text="@string/sample_location_txt"
-        android:textColor="#000"
-        android:textIsSelectable="true"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            <TextView
+                android:id="@+id/tv_course_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/bahnscrift"
+                android:text="Public Speaking"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_prof_name"
+                app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
-    <Button
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_background_stroke"
-        android:stateListAnimator="@null"
-        android:text="Set Timer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_define_radius" />
+            <TextView
+                android:id="@+id/tv_prof_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/bahnscrift"
+                android:text="Professor Richard"
+                android:textColor="@color/colorLightGray"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/tv_define_radius"
+                app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/tv_define_radius"
+                style="@style/style_txt_location"
+                android:layout_marginBottom="54dp"
+                android:text="@string/sample_location_txt"
+                app:layout_constraintBottom_toTopOf="@+id/button3"
+                app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_background_stroke"
+                android:stateListAnimator="@null"
+                android:text="@string/set_timer"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

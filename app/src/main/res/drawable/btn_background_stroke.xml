@@ -4,8 +4,8 @@
         android:color="@color/colorPrimary"/>
     <padding
         android:bottom="7dp"
-        android:left="60dp"
-        android:right="60dp"
+        android:left="70dp"
+        android:right="70dp"
         android:top="7dp" />
-    <corners android:radius="30dp" />
+    <corners android:radius="6dp" />
 </shape>
