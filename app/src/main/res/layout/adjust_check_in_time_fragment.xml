@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/checkdate_dialog"
+    android:id="@+id/checktime_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.AdjustCheckInTimeFragment">
@@ -18,7 +18,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_prox_desrc"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/bahnscrift"
-                android:text="Public Speaking"
+                android:text="@string/course_name"
                 android:textColor="@color/colorDarkGray"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/bahnscrift"
-                android:text="Professor Richard"
+                android:text="@string/professor_name"
                 android:textColor="@color/colorLightGray"
                 android:textSize="20sp"
                 android:textStyle="normal"
@@ -88,11 +88,11 @@
                 style="@style/style_txt_location"
                 android:layout_marginBottom="54dp"
                 android:text="@string/sample_location_txt"
-                app:layout_constraintBottom_toTopOf="@+id/button3"
+                app:layout_constraintBottom_toTopOf="@+id/btn_set_timer"
                 app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btn_set_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"

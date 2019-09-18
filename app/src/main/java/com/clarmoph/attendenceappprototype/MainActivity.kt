@@ -1,20 +1,52 @@
 package com.clarmoph.attendenceappprototype
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.clarmoph.attendenceappprototype.adapters.PagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mViewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setUpViewPager()
+        setUpNavButtons()
+
+        setUpNavigation()
         setContentView(R.layout.activity_main)
 
-        setUpViewPager()
+    }
+
+    override fun onBackPressed() {
+        if (mViewPager.currentItem == 0) {
+            super.onBackPressed()
+        } else {
+            mViewPager.currentItem = mViewPager.currentItem - 1
+        }
+    }
+
+    private fun setUpNavigation() {
+        btn_next.setOnClickListener(this)
+        btn_back.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            btn_next.id -> swipeNext()
+            btn_back.id -> swipeBack()
+        }
+    }
+
+    private fun swipeBack() {
+        mViewPager.currentItem = mViewPager.currentItem - 1
+    }
+
+    private fun swipeNext() {
+        mViewPager.currentItem = mViewPager.currentItem + 1
     }
 
     private fun setUpViewPager() {
@@ -24,11 +56,29 @@ class MainActivity : AppCompatActivity() {
         tab_indicator.setupWithViewPager(mViewPager)
     }
 
-    override fun onBackPressed() {
+    private fun setUpNavButtons() {
         if (mViewPager.currentItem == 0) {
-            super.onBackPressed()
+            hideBackButton()
+            showNextButton()
         } else {
-            mViewPager.currentItem = mViewPager.currentItem - 1
+            hideNextButton()
+            showBackButton()
         }
+    }
+
+    private fun hideNextButton() {
+        btn_next.visibility = View.INVISIBLE
+    }
+
+    private fun showNextButton() {
+        btn_next.visibility = View.VISIBLE
+    }
+
+    private fun hideBackButton() {
+        btn_back.visibility = View.INVISIBLE
+    }
+
+    private fun showBackButton() {
+        btn_back.visibility = View.VISIBLE
     }
 }

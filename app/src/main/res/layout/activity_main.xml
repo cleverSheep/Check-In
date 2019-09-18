@@ -39,7 +39,7 @@
         app:tabBackground="@drawable/indicator_selector" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_next"
         style="@style/style_nav_btns"
         android:layout_width="109dp"
         android:layout_height="61dp"
@@ -48,11 +48,13 @@
         android:background="@android:color/transparent"
         android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
         android:stateListAnimator="@null"
-        android:text="Next"
+        android:text="@string/next"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        android:id="@+id/btn_back"
         style="@style/style_nav_btns"
         android:layout_width="109dp"
         android:layout_height="61dp"
@@ -60,7 +62,7 @@
         android:background="@android:color/transparent"
         android:drawableStart="@drawable/ic_navigate_before_black_24dp"
         android:stateListAnimator="@null"
-        android:text="Back"
+        android:text="@string/back"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

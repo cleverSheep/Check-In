@@ -31,6 +31,7 @@ dependencies {
     def nav_version = "2.1.0"
     def fragment_version = "1.1.0"
     def runnerVersion = "1.1.0"
+    def rulesVersion = "1.1.1"
     def espressoVersion = "3.1.0"
     def coreVersion = "1.1.0"
     def extJUnitVersion = "1.1.0"
@@ -58,6 +59,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:' + extJUnitVersion
     androidTestImplementation 'androidx.test.ext:junit-ktx:' + extJUnitVersion
     androidTestImplementation 'androidx.test:runner:' + runnerVersion
+    androidTestImplementation "androidx.test:rules:${rulesVersion}"
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + espressoVersion
     // Testing Components
     testImplementation 'junit:junit:4.12'
