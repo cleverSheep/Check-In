@@ -9,7 +9,7 @@ import com.clarmoph.attendenceappprototype.R
 import com.clarmoph.attendenceappprototype.adapters.PagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private lateinit var mViewPager: ViewPager
     private lateinit var mPagerAdapter: PagerAdapter
@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setUpViewPager()
         setUpNavButtons()
         setUpNavigation()
-
 
     }
 
@@ -37,6 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mPagerAdapter = PagerAdapter(supportFragmentManager)
         mViewPager = findViewById(R.id.proto_viewpager)
         mViewPager.adapter = mPagerAdapter
+        mViewPager.addOnPageChangeListener(this)
         tab_indicator.setupWithViewPager(mViewPager)
     }
 
@@ -59,6 +59,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (view?.id) {
             btn_next.id -> swipeNext()
             btn_back.id -> swipeBack()
+        }
+    }
+
+    override fun onPageSelected(position: Int) {
+        if (position == 0) {
+            hideBackButton()
+            showNextButton()
+        } else {
+            hideNextButton()
+            showBackButton()
         }
     }
 
@@ -88,5 +98,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun showBackButton() {
         btn_back.visibility = View.VISIBLE
+    }
+
+    override fun onPageScrollStateChanged(state: Int) {
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
     }
 }
