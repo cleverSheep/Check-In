@@ -3,6 +3,7 @@ package com.clarmoph.attendenceappprototype
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -16,7 +17,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class FragmentTestSuite {
+class OnboardNavigationTestSuite {
 
     @get:Rule
     var activityTestRule = ActivityTestRule(MainActivity::class.java)
@@ -43,14 +44,12 @@ class FragmentTestSuite {
             .check(matches(isDisplayed()))
     }
 
-//    @Test
-//    fun testBackButtonDisplayedOnSecondScreen() {
-//        launchFragmentInContainer<AdjustProximityFragment>()
-//
-//        onView(withId(R.id.btn_next))
-//            .perform(click())
-//        onView(withId(R.id.btn_back))
-//            .check(matches(isDisplayed()))
-//    }
+    @Test
+    fun testBackButtonDisplayedOnSecondScreen() {
+        onView(withId(R.id.btn_next))
+            .perform(click())
+        onView(withId(R.id.btn_back))
+            .check(matches(isDisplayed()))
+    }
 
 }

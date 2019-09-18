@@ -12,17 +12,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mViewPager: ViewPager
-    private lateinit var mViewMvc: MainActivityViewMvc
+    private lateinit var mPagerAdapter: PagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
         setUpViewPager()
         setUpNavButtons()
         setUpNavigation()
 
-        mViewMvc = MainActivityViewMvc(LayoutInflater.from(this), null)
-
-        setContentView(mViewMvc.getRootView())
 
     }
 
@@ -34,9 +33,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun setUpViewPager() {
+        mPagerAdapter = PagerAdapter(supportFragmentManager)
+        mViewPager = findViewById(R.id.proto_viewpager)
+        mViewPager.adapter = mPagerAdapter
+        tab_indicator.setupWithViewPager(mViewPager)
+    }
+
     private fun setUpNavigation() {
         btn_next.setOnClickListener(this)
         btn_back.setOnClickListener(this)
+    }
+
+    private fun setUpNavButtons() {
+        if (mViewPager.currentItem == 0) {
+            hideBackButton()
+            showNextButton()
+        } else {
+            hideNextButton()
+            showBackButton()
+        }
     }
 
     override fun onClick(view: View?) {
@@ -48,27 +64,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun swipeBack() {
         mViewPager.currentItem = mViewPager.currentItem - 1
+        hideBackButton()
+        showNextButton()
     }
 
     private fun swipeNext() {
         mViewPager.currentItem = mViewPager.currentItem + 1
-    }
-
-    private fun setUpViewPager() {
-        val mPagerAdapter = PagerAdapter(supportFragmentManager)
-        mViewPager = findViewById(R.id.proto_viewpager)
-        mViewPager.adapter = mPagerAdapter
-        tab_indicator.setupWithViewPager(mViewPager)
-    }
-
-    private fun setUpNavButtons() {
-        if (mViewPager.currentItem == 0) {
-            hideBackButton()
-            showNextButton()
-        } else {
-            hideNextButton()
-            showBackButton()
-        }
+        hideNextButton()
+        showBackButton()
     }
 
     private fun hideNextButton() {
