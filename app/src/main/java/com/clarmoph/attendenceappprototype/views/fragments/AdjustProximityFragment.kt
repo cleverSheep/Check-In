@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype.views
+package com.clarmoph.attendenceappprototype.views.fragments
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -13,7 +13,8 @@ import com.clarmoph.attendenceappprototype.viewmodels.CourseProximityViewModel
 class AdjustProximityFragment : Fragment() {
 
     companion object {
-        fun newInstance() = AdjustProximityFragment()
+        fun newInstance() =
+            AdjustProximityFragment()
     }
 
     private lateinit var viewModel: CourseProximityViewModel

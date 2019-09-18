@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype.views
+package com.clarmoph.attendenceappprototype.views.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,8 @@ import com.clarmoph.attendenceappprototype.viewmodels.CheckInTimeViewModel
 class AdjustCheckInTimeFragment : Fragment() {
 
     companion object {
-        fun newInstance() = AdjustCheckInTimeFragment()
+        fun newInstance() =
+            AdjustCheckInTimeFragment()
         var TAG = AdjustCheckInTimeFragment::class.java.name
     }
 

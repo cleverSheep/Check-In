@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype.views
+package com.clarmoph.attendenceappprototype.views.fragments
 
 import android.content.Context
 import android.graphics.Canvas

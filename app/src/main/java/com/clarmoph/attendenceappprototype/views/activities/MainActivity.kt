@@ -1,23 +1,28 @@
-package com.clarmoph.attendenceappprototype
+package com.clarmoph.attendenceappprototype.views.activities
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import com.clarmoph.attendenceappprototype.R
 import com.clarmoph.attendenceappprototype.adapters.PagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mViewPager: ViewPager
+    private lateinit var mViewMvc: MainActivityViewMvc
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setUpViewPager()
         setUpNavButtons()
-
         setUpNavigation()
-        setContentView(R.layout.activity_main)
+
+        mViewMvc = MainActivityViewMvc(LayoutInflater.from(this), null)
+
+        setContentView(mViewMvc.getRootView())
 
     }
 
