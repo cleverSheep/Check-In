@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype.views.fragments
+package com.clarmoph.clockin.views.fragments
 
 import android.content.Context
 import android.graphics.Canvas

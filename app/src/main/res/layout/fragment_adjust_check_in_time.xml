@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/adjust_proximity"
+    android:id="@+id/checktime_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.fragments.AdjustProximityFragment">
+    tools:context=".views.fragments.AdjustCheckInTimeFragment">
 
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bahnscrift"
-        android:text="@string/adjust_check_in_proximity"
+        android:text="@string/adjust_time"
         android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:fontFamily="@font/bahnscrift"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
-        android:text="@string/set_parameters_descr"
+        android:text="@string/set_time"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +36,11 @@
         app:layout_constraintTop_toBottomOf="@id/tv_adjust_proximity" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
         style="@style/style_cardview_info"
+        android:layout_width="338dp"
+        android:layout_height="364dp"
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_prox_desrc">
 
@@ -48,49 +48,75 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:contentDescription="@string/map_content_description"
-                android:src="@drawable/iv_library_proto"
+                android:src="@drawable/iv_school"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
-                style="@style/style_txt_location"
+                android:id="@+id/tv_course_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="27dp"
-                android:text="@string/sample_location_txt"
-                app:layout_constraintBottom_toTopOf="@+id/btn_set_radius"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/bahnscrift"
-                android:text="@string/course_room"
-                android:textColor="#707070"
+                android:text="@string/course_name"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_prof_name"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/tv_prof_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/bahnscrift"
+                android:text="@string/professor_name"
+                android:textColor="@color/colorLightGray"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/tv_define_radius"
+                app:layout_constraintEnd_toEndOf="@+id/tv_course_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_course_name" />
+
+            <TextView
+                android:id="@+id/tv_define_radius"
+                style="@style/style_txt_location"
+                android:layout_marginBottom="40dp"
+                android:text="@string/sample_location_txt"
+                app:layout_constraintBottom_toTopOf="@+id/btn_set_time"
+                app:layout_constraintEnd_toEndOf="@+id/tv_course_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_course_name" />
 
             <Button
-                android:id="@+id/btn_set_radius"
+                android:id="@+id/btn_set_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_background_stroke"
+                android:stateListAnimator="@null"
+                android:text="@string/set_timer"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btn_cont_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/btn_background_fill"
-                android:text="@string/set_radius"
-                android:textColor="#FFF"
+                android:text="@string/start_tracking"
+                android:textColor="#fff"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

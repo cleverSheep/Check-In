@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.clarmoph.attendenceappprototype">
+    package="com.clarmoph.clockin">
 
     <application
         android:allowBackup="true"
@@ -12,18 +12,18 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".views.activities.RadiusActivity"
+            android:name="com.clarmoph.clockin.views.activities.RadiusActivity"
             android:label="Set Radius"
-            android:parentActivityName=".views.activities.MainActivity">
+            android:parentActivityName="com.clarmoph.clockin.views.activities.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".views.activities.MainActivity" />
+                android:value="com.clarmoph.clockin.views.activities.MainActivity" />
 
         </activity>
         <activity
-            android:name=".views.activities.MainActivity"
+            android:name="com.clarmoph.clockin.views.activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

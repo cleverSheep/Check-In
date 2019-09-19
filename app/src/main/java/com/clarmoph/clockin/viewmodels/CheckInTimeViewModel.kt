@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype.viewmodels
+package com.clarmoph.clockin.viewmodels
 
 import androidx.lifecycle.ViewModel
 

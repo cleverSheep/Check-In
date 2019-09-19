@@ -53,15 +53,15 @@
             android:textSize="20sp" />
 
         <TextView
+            style="@style/style_txt_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/bahnscrift"
-            android:text="@string/course_room"
-            android:textColor="#707070"
-            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
-            android:layout_gravity="end"/>
+            android:fontFamily="@font/bahnscrift"
+            android:text="@string/sample_location_txt"
+            android:textColor="#707070"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <View
@@ -79,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="75dp"
         app:isb_indicator_color="@color/colorAccent"
+        app:isb_max="50"
         app:isb_progress="0"
         app:isb_show_indicator="rectangle"
         app:isb_show_tick_marks_type="divider"

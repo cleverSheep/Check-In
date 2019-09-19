@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype.views.fragments
+package com.clarmoph.clockin.views.fragments
 
 import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
@@ -8,10 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import com.clarmoph.attendenceappprototype.R
-import com.clarmoph.attendenceappprototype.viewmodels.CourseProximityViewModel
-import com.clarmoph.attendenceappprototype.views.activities.RadiusActivity
-import kotlinx.android.synthetic.main.adjust_proximity_fragment.*
+import com.clarmoph.clockin.R
+import com.clarmoph.clockin.viewmodels.CourseProximityViewModel
+import com.clarmoph.clockin.views.activities.RadiusActivity
+import kotlinx.android.synthetic.main.fragment_adjust_proximity.*
 
 class AdjustProximityFragment : Fragment(), View.OnClickListener {
     companion object {
@@ -25,7 +25,7 @@ class AdjustProximityFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.adjust_proximity_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_adjust_proximity, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

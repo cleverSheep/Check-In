@@ -1,4 +1,4 @@
-package com.clarmoph.attendenceappprototype
+package com.clarmoph.clockin
 
 import org.junit.Test
 
