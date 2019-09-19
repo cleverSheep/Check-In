@@ -88,11 +88,11 @@
                 style="@style/style_txt_location"
                 android:layout_marginBottom="54dp"
                 android:text="@string/sample_location_txt"
-                app:layout_constraintBottom_toTopOf="@+id/btn_set_timer"
+                app:layout_constraintBottom_toTopOf="@+id/btn_cont_radius"
                 app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
             <Button
-                android:id="@+id/btn_set_timer"
+                android:id="@+id/btn_cont_radius"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"

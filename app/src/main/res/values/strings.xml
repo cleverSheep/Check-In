@@ -19,4 +19,6 @@
     <string name="set_radius">Set Radius</string>
     <string name="next">Next</string>
     <string name="back">Back</string>
+    <string name="btn_cont">Continue</string>
+    <string name="set_to_meters">Radius in Meters</string>
 </resources>

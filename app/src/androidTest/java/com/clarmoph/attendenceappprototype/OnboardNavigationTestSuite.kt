@@ -9,9 +9,9 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
+import com.clarmoph.attendenceappprototype.views.activities.MainActivity
 import com.clarmoph.attendenceappprototype.views.fragments.AdjustCheckInTimeFragment
 import com.clarmoph.attendenceappprototype.views.fragments.AdjustProximityFragment
-import com.clarmoph.attendenceappprototype.views.activities.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

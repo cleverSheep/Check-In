@@ -13,6 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".views.activities.RadiusActivity"
+            android:label="Set Radius"
             android:parentActivityName=".views.activities.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
