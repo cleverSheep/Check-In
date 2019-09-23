@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.fragments.dialog
+package com.clarmoph.clockin.views.fragments.dialog
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -6,7 +6,7 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import com.clarmoph.checkin.R
+import com.clarmoph.clockin.R
 
 class SetTimeDialog : DialogFragment() {
 

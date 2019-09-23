@@ -1,11 +1,11 @@
-package com.clarmoph.checkin.views.activities
+package com.clarmoph.clockin.views.activities
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.clarmoph.checkin.R
-import com.clarmoph.checkin.adapters.PagerAdapter
+import com.clarmoph.clockin.R
+import com.clarmoph.clockin.adapters.PagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPageChangeListener {

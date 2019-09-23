@@ -42,10 +42,6 @@
             android:contentDescription="@string/map_content_description"
             android:src="@drawable/iv_library_proto" />
 
-        <com.clarmoph.checkin.views.custom.ProximityView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
         <TextView
             android:id="@+id/tv_meters"
             android:layout_width="wrap_content"
