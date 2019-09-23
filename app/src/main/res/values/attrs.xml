@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ProximityView">
+        <attr name="radiusSize" format="dimension" />
+        <attr name="fillColor" format="color" />
+    </declare-styleable>
+
+</resources>

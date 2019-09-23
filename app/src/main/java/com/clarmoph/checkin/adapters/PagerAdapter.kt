@@ -1,10 +1,10 @@
-package com.clarmoph.clockin.adapters
+package com.clarmoph.checkin.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.clarmoph.clockin.views.fragments.AdjustCheckInTimeFragment
-import com.clarmoph.clockin.views.fragments.AdjustProximityFragment
+import com.clarmoph.checkin.views.fragments.AdjustCheckInTimeFragment
+import com.clarmoph.checkin.views.fragments.AdjustProximityFragment
 
 class PagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

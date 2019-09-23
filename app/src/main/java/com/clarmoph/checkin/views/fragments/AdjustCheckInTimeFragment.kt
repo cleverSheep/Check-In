@@ -1,15 +1,14 @@
-package com.clarmoph.clockin.views.fragments
+package com.clarmoph.checkin.views.fragments
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.clarmoph.clockin.R
-import com.clarmoph.clockin.viewmodels.CheckInTimeViewModel
-import com.clarmoph.clockin.views.fragments.dialog.SetTimeDialog
+import com.clarmoph.checkin.R
+import com.clarmoph.checkin.viewmodels.CheckInTimeViewModel
+import com.clarmoph.checkin.views.fragments.dialog.SetTimeDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_adjust_check_in_time.*
 

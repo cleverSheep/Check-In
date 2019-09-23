@@ -1,4 +1,4 @@
-package com.clarmoph.clockin.viewmodels
+package com.clarmoph.checkin.viewmodels
 
 import androidx.lifecycle.ViewModel
 
