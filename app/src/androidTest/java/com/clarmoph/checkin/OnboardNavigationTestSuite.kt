@@ -26,8 +26,6 @@ class OnboardNavigationTestSuite {
     fun testCheckInTimeFragmentIsDisplayed() {
         launchFragmentInContainer<AdjustCheckInTimeFragment>()
 
-        // Testing merge
-
         onView(withId(R.id.checktime_fragment))
             .check(matches(isDisplayed()))
     }
