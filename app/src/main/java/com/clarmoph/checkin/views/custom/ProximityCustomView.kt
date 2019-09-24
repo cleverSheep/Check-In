@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.fragments
+package com.clarmoph.checkin.views.custom
 
 import android.content.Context
 import android.graphics.Canvas
@@ -19,7 +19,8 @@ class ProximityCustomView(context: Context?, attrs: AttributeSet?) : View(contex
     }
 
     private val mPaint: Paint = Paint()
-    private var fillColor = DEFAULT_FILL_COLOR
+    private var fillColor =
+        DEFAULT_FILL_COLOR
 
     init {
         setUpAttributes(attrs)
@@ -30,7 +31,8 @@ class ProximityCustomView(context: Context?, attrs: AttributeSet?) : View(contex
         }
     }
 
-    var radiusSize = DEFAULT_RADIUS_SIZE
+    var radiusSize =
+        DEFAULT_RADIUS_SIZE
         set(size) {
             field = size * RADIUS_MULTIPLIER
             postInvalidate()

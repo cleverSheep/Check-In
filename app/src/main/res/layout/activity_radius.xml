@@ -42,7 +42,7 @@
             android:contentDescription="@string/map_content_description"
             android:src="@drawable/iv_library_proto" />
 
-        <com.clarmoph.checkin.views.fragments.ProximityCustomView
+        <com.clarmoph.checkin.views.custom.ProximityCustomView
             android:id="@+id/proxi_view"
             android:layout_width="110dp"
             android:layout_height="150dp"

@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import com.clarmoph.checkin.R
-import com.clarmoph.checkin.viewmodels.CheckInTimeViewModel
-import com.clarmoph.checkin.views.fragments.dialog.SetTimeDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_adjust_check_in_time.*
 
@@ -17,11 +14,7 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
 
     companion object {
         fun newInstance() = AdjustCheckInTimeFragment()
-
-        var TAG = AdjustCheckInTimeFragment::class.java.name
     }
-
-    private lateinit var viewModel: CheckInTimeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +25,6 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(CheckInTimeViewModel::class.java)
         setUpNavigation()
     }
 
