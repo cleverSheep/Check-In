@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.clarmoph.checkin.R
 import com.clarmoph.checkin.adapters.PagerAdapter
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPageChangeListener {
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         setUpViewPager()
         setUpNavButtons()
         setUpNavigation()
-
+        retrieveBundleExtra()
     }
 
     override fun onBackPressed() {
@@ -28,6 +29,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
             super.onBackPressed()
         } else {
             mViewPager.currentItem = mViewPager.currentItem - 1
+        }
+    }
+
+    private fun retrieveBundleExtra() {
+        val intent = intent
+        val extras = intent.extras ?: return
+
+        if (extras.getBoolean("RADIUS_SET")) {
+            Snackbar.make(
+                findViewById(R.id.root_view),
+                "Course location entrance proximity now set.",
+                Snackbar.LENGTH_SHORT
+            ).show()
         }
     }
 

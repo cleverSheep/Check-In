@@ -37,8 +37,12 @@ class RadiusActivity : AppCompatActivity(), View.OnClickListener, OnSeekChangeLi
     }
 
     override fun onClick(view: View?) {
-        // TODO: SEND AN INTENT EXTRA CONTAINING THE RADIUS AND DISPLAY RADIUS CONFIRMATION IN SNACKBAR
+        val extras = Bundle()
+        extras.putBoolean("RADIUS_SET", true)
+
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtras(extras)
+
         startActivity(intent)
     }
 
