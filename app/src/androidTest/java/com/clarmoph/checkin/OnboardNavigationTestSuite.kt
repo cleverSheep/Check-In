@@ -29,9 +29,7 @@ class OnboardNavigationTestSuite {
         onView(withId(R.id.checktime_fragment))
             .check(matches(isDisplayed()))
     }
-
-    // TESTING
-
+    
     @Test
     fun testAdjustProximityFragmentIsDisplayed() {
         launchFragmentInContainer<AdjustProximityFragment>()
