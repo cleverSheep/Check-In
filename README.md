@@ -8,9 +8,11 @@ This project will be following the Google recommended MVVM architecture guidline
 ![Architecture](https://firebasestorage.googleapis.com/v0/b/check-in-fc777.appspot.com/o/architecture.png?alt=media&token=f96927ae-5192-4f52-ac43-ed5158177141)
 
 ## Built With
-* [Geofence API](https://developer.android.com/training/location/geofencing)
-* Kotlin
-* Android SDK
+* 100% Kotlin
+* [Dagger 2](https://github.com/google/dagger#dagger) - Dependency Injection
+* [Geofence API](https://developer.android.com/training/location/geofencing) - Getting location updates
+* [Espresso](https://developer.android.com/training/testing/espresso) - Android UI tests
+* Custom Views
 
 ## Contributors
 * Dean Murray
