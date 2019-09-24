@@ -43,6 +43,7 @@
             android:src="@drawable/iv_library_proto" />
 
         <com.clarmoph.checkin.views.fragments.ProximityCustomView
+            android:id="@+id/proxi_view"
             android:layout_width="110dp"
             android:layout_height="150dp"
             android:layout_gravity="end|bottom"
@@ -89,7 +90,7 @@
         android:layout_marginBottom="75dp"
         checkin:isb_indicator_color="@color/colorAccent"
         checkin:isb_max="50"
-        checkin:isb_progress="0"
+        checkin:isb_progress="25"
         checkin:isb_show_indicator="rectangle"
         checkin:isb_show_tick_marks_type="divider"
         checkin:isb_thumb_color="@color/colorAccent"

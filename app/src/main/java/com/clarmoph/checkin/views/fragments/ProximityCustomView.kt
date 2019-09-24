@@ -14,7 +14,8 @@ class ProximityCustomView(context: Context?, attrs: AttributeSet?) : View(contex
 
     companion object {
         private const val DEFAULT_FILL_COLOR = Color.BLUE
-        private const val DEFAULT_RADIUS_SIZE = 75f
+        private const val DEFAULT_RADIUS_SIZE = 25f
+        private const val RADIUS_MULTIPLIER = 1.5F
     }
 
     private val mPaint: Paint = Paint()
@@ -31,7 +32,7 @@ class ProximityCustomView(context: Context?, attrs: AttributeSet?) : View(contex
 
     var radiusSize = DEFAULT_RADIUS_SIZE
         set(size) {
-            field = size * 5
+            field = size * RADIUS_MULTIPLIER
             postInvalidate()
         }
 
