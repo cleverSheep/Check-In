@@ -5,6 +5,8 @@ Check-In is a mobile project for taking attendence using location based APIs. In
 
 ## Built With
 * [Geofence API](https://developer.android.com/training/location/geofencing)
+* Kotlin
+* Android SDK
 
 ## Contributors
 * Dean Murray
