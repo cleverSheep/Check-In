@@ -1,4 +1,4 @@
-package com.clarmoph.clockin
+package com.clarmoph.checkin
 
 
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -9,9 +9,9 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.clarmoph.clockin.views.activities.MainActivity
-import com.clarmoph.clockin.views.fragments.AdjustCheckInTimeFragment
-import com.clarmoph.clockin.views.fragments.AdjustProximityFragment
+import com.clarmoph.checkin.views.activities.MainActivity
+import com.clarmoph.checkin.views.fragments.AdjustCheckInTimeFragment
+import com.clarmoph.checkin.views.fragments.AdjustProximityFragment
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

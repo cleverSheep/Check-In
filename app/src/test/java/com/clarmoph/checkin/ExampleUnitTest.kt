@@ -1,4 +1,4 @@
-package com.clarmoph.clockin
+package com.clarmoph.checkin
 
 import org.junit.Test
 
