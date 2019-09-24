@@ -30,6 +30,8 @@ class OnboardNavigationTestSuite {
             .check(matches(isDisplayed()))
     }
 
+    // TESTING
+
     @Test
     fun testAdjustProximityFragmentIsDisplayed() {
         launchFragmentInContainer<AdjustProximityFragment>()
