@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.fragments
+package com.clarmoph.checkin.views.adjust
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -45,7 +45,8 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
         btn_set_time.visibility = View.INVISIBLE
         btn_cont_timer.visibility = View.VISIBLE
 
-        val setTimeFragment = SetTimeDialog.newInstance()
+        val setTimeFragment =
+            SetTimeDialog.newInstance()
         fragmentManager?.let { setTimeFragment.show(it, "setTime") }
     }
 

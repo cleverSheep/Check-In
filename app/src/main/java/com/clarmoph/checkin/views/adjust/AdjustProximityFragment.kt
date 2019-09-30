@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.fragments
+package com.clarmoph.checkin.views.adjust
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.clarmoph.checkin.R
-import com.clarmoph.checkin.views.activities.RadiusActivity
+import com.clarmoph.checkin.RadiusActivity
+
 import kotlinx.android.synthetic.main.fragment_adjust_proximity.*
 
 class AdjustProximityFragment : Fragment(), View.OnClickListener {

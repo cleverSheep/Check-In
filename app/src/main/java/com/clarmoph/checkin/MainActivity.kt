@@ -1,10 +1,9 @@
-package com.clarmoph.checkin.views.activities
+package com.clarmoph.checkin
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.clarmoph.checkin.R
 import com.clarmoph.checkin.adapters.PagerAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,14 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         retrieveBundleExtra()
     }
 
-    override fun onBackPressed() {
-        if (mViewPager.currentItem == 0) {
-            super.onBackPressed()
-        } else {
-            mViewPager.currentItem = mViewPager.currentItem - 1
-        }
-    }
-
+    // Notify the instructor of the size of the geofence they set
     private fun retrieveBundleExtra() {
         val intent = intent
         val extras = intent.extras ?: return
@@ -45,6 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         }
     }
 
+    /* Setup work for the activity views */
     private fun setUpViewPager() {
         mPagerAdapter = PagerAdapter(supportFragmentManager)
         mViewPager = findViewById(R.id.proto_viewpager)
@@ -67,6 +60,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
             showBackButton()
         }
     }
+
+    override fun onBackPressed() {
+        if (mViewPager.currentItem == 0) {
+            super.onBackPressed()
+        } else {
+            mViewPager.currentItem = mViewPager.currentItem - 1
+        }
+    }
+
 
     override fun onClick(view: View?) {
         when (view?.id) {
