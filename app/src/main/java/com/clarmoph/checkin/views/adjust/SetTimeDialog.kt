@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.fragments
+package com.clarmoph.checkin.views.adjust
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog

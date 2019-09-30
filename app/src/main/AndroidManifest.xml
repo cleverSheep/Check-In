@@ -12,18 +12,18 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name="com.clarmoph.checkin.views.activities.RadiusActivity"
+            android:name="com.clarmoph.checkin.RadiusActivity"
             android:label="Set Radius"
-            android:parentActivityName="com.clarmoph.checkin.views.activities.MainActivity">
+            android:parentActivityName="com.clarmoph.checkin.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.clarmoph.checkin.views.activities.MainActivity" />
+                android:value="com.clarmoph.checkin.MainActivity" />
 
         </activity>
         <activity
-            android:name="com.clarmoph.checkin.views.activities.MainActivity"
+            android:name="com.clarmoph.checkin.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
