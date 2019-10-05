@@ -3,8 +3,8 @@ package com.clarmoph.checkin.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.clarmoph.checkin.views.adjust.AdjustCheckInTimeFragment
-import com.clarmoph.checkin.views.adjust.AdjustProximityFragment
+import com.clarmoph.checkin.views.adjust.time.AdjustCheckInTimeFragment
+import com.clarmoph.checkin.views.adjust.proximity.AdjustProximityFragment
 
 class PagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
