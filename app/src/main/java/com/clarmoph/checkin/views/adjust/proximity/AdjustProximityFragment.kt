@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.adjust
+package com.clarmoph.checkin.views.adjust.proximity
 
 import android.content.Intent
 import android.os.Bundle

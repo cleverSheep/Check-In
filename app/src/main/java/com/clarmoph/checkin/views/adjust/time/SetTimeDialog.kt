@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.adjust
+package com.clarmoph.checkin.views.adjust.time
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog

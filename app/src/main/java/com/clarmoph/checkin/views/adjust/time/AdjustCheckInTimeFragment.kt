@@ -1,4 +1,4 @@
-package com.clarmoph.checkin.views.adjust
+package com.clarmoph.checkin.views.adjust.time
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,27 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.clarmoph.checkin.R
-import com.clarmoph.checkin.location.AdjustCheckInTimeManager
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_adjust_check_in_time.*
 
 
 class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
+
     companion object {
         fun newInstance() = AdjustCheckInTimeFragment()
         private val mListeners: ArrayList<Listener> = ArrayList(1)
     }
 
-    private lateinit var mAdjustCheckInTimeManager: AdjustCheckInTimeManager
+    private lateinit var mAdjustCheckInTimeGeofence: AdjustCheckInTimeGeofence
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mAdjustCheckInTimeManager = AdjustCheckInTimeManager(
-            LayoutInflater.from(activity),
-            activity!!.findViewById(R.id.root_view)
-        )
-        return mAdjustCheckInTimeManager.getRootView()
+
+        mAdjustCheckInTimeGeofence = AdjustCheckInTimeGeofence.newInstance()
+        return inflater.inflate(R.layout.fragment_adjust_check_in_time, container, false)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -59,6 +59,16 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
         for (listener in mListeners) {
             listener.onStartTracking()
         }
+
+        val snackbar = Snackbar.make(
+            activity!!.findViewById(R.id.root_view),
+            "We'll start the timer when you enter your room.",
+            Snackbar.LENGTH_INDEFINITE
+        )
+        snackbar.setAction("Ok") { snackbar.dismiss() }
+        snackbar.setActionTextColor(context!!.resources.getColor(R.color.colorPrimary))
+        snackbar.show()
+
 
     }
 
