@@ -1,0 +1,32 @@
+package com.clarmoph.checkin.utils
+
+class GeofenceUtil {
+    companion object {
+
+        /*
+            Used to define the radius of the geofence. Temporarily hardcoded for ease
+            of testing.
+         */
+        const val GEOFENCE_RADIUS_IN_METERS: Int = 1609
+
+        /*
+            Used to define the latitude and longitude of the geofence. Temporarily hardcoded for ease
+            of testing.
+         */
+        const val GEOFENCE_LATITUDE: Float = 35.607026F
+        const val GEOFENCE_LONGITUDE: Float = -77.368311f
+
+        /*
+            Used to define the duration of the geofence in seconds. Temporarily hardcoded for ease
+            of testing.
+         */
+        private const val GEOFENCE_DURATION_IN_SECONDS: Long = 10
+
+        /*
+            Used to define the duration of the geofence in milliseconds. Temporarily hardcoded for ease
+            of testing.
+         */
+        const val GEOFENCE_DURATION_IN_MILLISECONDS: Long = 1000 * GEOFENCE_DURATION_IN_SECONDS
+
+    }
+}
