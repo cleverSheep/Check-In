@@ -17,14 +17,12 @@ class SetTimeDialog : DialogFragment() {
     @SuppressLint("InflateParams")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
-            // Use the Builder class for convenient dialog construction
+
             val builder = AlertDialog.Builder(it)
 
-            // Dialog visual content
             val inflater = requireActivity().layoutInflater
             builder.setView(inflater.inflate(R.layout.dialog_set_time, null))
 
-            // Dialog textual content
             builder.setPositiveButton(
                 R.string.ok
             ) { _, id ->
@@ -40,7 +38,7 @@ class SetTimeDialog : DialogFragment() {
                         dismiss()
                     }
                 }
-            // Create the AlertDialog object and return it
+
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }

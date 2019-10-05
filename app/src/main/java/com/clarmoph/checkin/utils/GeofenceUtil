@@ -1,6 +1,7 @@
 package com.clarmoph.checkin.utils
 
 class GeofenceUtil {
+
     companion object {
 
         /*

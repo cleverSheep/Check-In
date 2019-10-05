@@ -17,6 +17,10 @@ class AdjustCheckInTimeGeofence : AdjustCheckInTimeFragment.Listener {
         mAdjustCheckInTimeFragment.registerListener(this)
     }
 
+    /*
+        Work to be completed when notified that user
+        has started tracking
+     */
     override fun onStartTracking() {
         super.onStartTracking()
 

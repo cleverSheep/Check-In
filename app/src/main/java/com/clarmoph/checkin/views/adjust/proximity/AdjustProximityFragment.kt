@@ -2,21 +2,20 @@ package com.clarmoph.checkin.views.adjust.proximity
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.clarmoph.checkin.R
 import com.clarmoph.checkin.RadiusActivity
-
 import kotlinx.android.synthetic.main.fragment_adjust_proximity.*
 
 class AdjustProximityFragment : Fragment(), View.OnClickListener {
+
     companion object {
         fun newInstance() =
             AdjustProximityFragment()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,10 +26,10 @@ class AdjustProximityFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        setUpNavigation()
+        setupButtonClickListener()
     }
 
-    private fun setUpNavigation() {
+    private fun setupButtonClickListener() {
         btn_set_radius.setOnClickListener(this)
     }
 

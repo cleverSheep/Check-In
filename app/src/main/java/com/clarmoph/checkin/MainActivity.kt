@@ -18,13 +18,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         setContentView(R.layout.activity_main)
 
         setUpViewPager()
-        setUpNavButtons()
-        setUpNavigation()
-        retrieveBundleExtra()
+        setUpNavButtonVisibility()
+        setupButtonClickListener()
+        confirmSetProximity()
     }
 
-    // Notify the instructor of the size of the geofence they set
-    private fun retrieveBundleExtra() {
+    private fun confirmSetProximity() {
         val intent = intent
         val extras = intent.extras ?: return
 
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         }
     }
 
-    /* Setup work for the activity views */
     private fun setUpViewPager() {
         mPagerAdapter = PagerAdapter(supportFragmentManager)
         mViewPager = findViewById(R.id.proto_viewpager)
@@ -46,12 +44,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         tab_indicator.setupWithViewPager(mViewPager)
     }
 
-    private fun setUpNavigation() {
+    private fun setupButtonClickListener() {
         btn_next.setOnClickListener(this)
         btn_back.setOnClickListener(this)
     }
 
-    private fun setUpNavButtons() {
+    private fun setUpNavButtonVisibility() {
         if (mViewPager.currentItem == 0) {
             hideBackButton()
             showNextButton()
@@ -72,8 +70,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            btn_next.id -> swipeNext()
-            btn_back.id -> swipeBack()
+            btn_next.id -> swipeNextPage()
+            btn_back.id -> swipeBackPage()
         }
     }
 
@@ -87,13 +85,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
         }
     }
 
-    private fun swipeBack() {
+    private fun swipeBackPage() {
         mViewPager.currentItem = mViewPager.currentItem - 1
         hideBackButton()
         showNextButton()
     }
 
-    private fun swipeNext() {
+    private fun swipeNextPage() {
         mViewPager.currentItem = mViewPager.currentItem + 1
         hideNextButton()
         showBackButton()

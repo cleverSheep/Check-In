@@ -31,30 +31,33 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        setUpNavigation()
+        setupButtonClickListener()
     }
 
-    private fun setUpNavigation() {
+    private fun setupButtonClickListener() {
         btn_cont_timer.setOnClickListener(this)
         btn_set_time.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            btn_set_time.id -> setTime()
+            btn_set_time.id -> setDurationInGeofence()
             btn_cont_timer.id -> startLocationTracking()
         }
     }
 
-    private fun setTime() {
+    private fun setDurationInGeofence() {
         btn_set_time.visibility = View.INVISIBLE
         btn_cont_timer.visibility = View.VISIBLE
 
         val setTimeFragment =
             SetTimeDialog.newInstance()
-        fragmentManager?.let { setTimeFragment.show(it, "setTime") }
+        fragmentManager?.let { setTimeFragment.show(it, "setDurationInGeofence") }
     }
 
+    /*
+        Notify observers to begin 'start tracking' work
+     */
     private fun startLocationTracking() {
         for (listener in mListeners) {
             listener.onStartTracking()
@@ -68,7 +71,6 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
         snackbar.setAction("Ok") { snackbar.dismiss() }
         snackbar.setActionTextColor(context!!.resources.getColor(R.color.colorPrimary))
         snackbar.show()
-
 
     }
 
