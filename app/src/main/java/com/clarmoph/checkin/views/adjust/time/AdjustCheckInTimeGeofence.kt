@@ -15,6 +15,7 @@ class AdjustCheckInTimeGeofence : AdjustCheckInTimeFragment.Listener {
     init {
         mAdjustCheckInTimeFragment = AdjustCheckInTimeFragment()
         mAdjustCheckInTimeFragment.registerListener(this)
+
     }
 
     /*
