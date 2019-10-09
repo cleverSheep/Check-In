@@ -23,10 +23,8 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        mAdjustCheckInTimeGeofence = AdjustCheckInTimeGeofence.newInstance()
-        return inflater.inflate(R.layout.fragment_adjust_check_in_time, container, false)
-
+        mAdjustCheckInTimeGeofence = AdjustCheckInTimeGeofence(inflater, container)
+        return mAdjustCheckInTimeGeofence.getRootView()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
