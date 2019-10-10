@@ -53,8 +53,8 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
         fragmentManager?.let { setTimeFragment.show(it, "setDurationInGeofence") }
     }
 
-    /*
-        Notify observers to begin 'start tracking' work
+    /**
+     * Notify observers to begin 'start tracking' work
      */
     private fun startLocationTracking() {
         for (listener in mListeners) {
