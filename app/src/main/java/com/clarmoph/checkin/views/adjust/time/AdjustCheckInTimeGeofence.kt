@@ -39,7 +39,6 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
 
         mGeofencingClient = LocationServices.getGeofencingClient(getContext())
         mGeofenceList = ArrayList()
-
         populateGeofenceList(mGeofenceList)
 
         mAdjustCheckInTimeFragment = AdjustCheckInTimeFragment()
