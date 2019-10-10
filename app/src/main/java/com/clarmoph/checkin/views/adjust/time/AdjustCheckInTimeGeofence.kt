@@ -2,19 +2,24 @@ package com.clarmoph.checkin.views.adjust.time
 
 import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.clarmoph.checkin.GeofenceBroadcastReceiver
 import com.clarmoph.checkin.R
 import com.clarmoph.checkin.utils.GeofenceUtil
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingClient
 import com.google.android.gms.location.GeofencingRequest
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 
 @Suppress("JoinDeclarationAndAssignment")
 class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
-    AdjustCheckInTimeFragment.Listener {
+    AdjustCheckInTimeFragment.Listener, OnCompleteListener<Void> {
 
     /**
      * Provides access to the Geofencing API
@@ -46,7 +51,8 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
      */
     override fun onStartTracking() {
         super.onStartTracking()
-        mGeofencingClient.addGeofences(getGeofencingRequest(), getGeofencePendingIntent())
+        mGeofencingClient.addGeofences(getGeofencingRequest(), geofencePendingIntent)
+            .addOnCompleteListener(this)
     }
 
     /**
@@ -72,13 +78,30 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
      *  to be monitored. Also specifies how the geofence notifications are initially triggered.
      */
     private fun getGeofencingRequest(): GeofencingRequest {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return GeofencingRequest.Builder().apply {
+            setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT)
+            addGeofences(mGeofenceList)
+        }.build()
     }
 
-    private fun getGeofencePendingIntent(): PendingIntent {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    private val geofencePendingIntent: PendingIntent by lazy {
+        val intent = Intent(getContext(), GeofenceBroadcastReceiver::class.java)
+        // We use FLAG_UPDATE _CURRENT so that we get the same pending intent back when calling
+        // addGeofences() and removeGeofences().
+        PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
+    /**
+     * Notify the user that the result of calling addGeofences()
+     * was a success or a failure
+     */
+    override fun onComplete(task: Task<Void>) {
+        if (task.isSuccessful) {
+            Log.d(javaClass.simpleName, "Geofence Added")
+        } else {
+            Log.w(javaClass.simpleName, "Geofence Not Added")
+        }
+    }
 
     private fun getContext(): Context {
         return mRootView.context
