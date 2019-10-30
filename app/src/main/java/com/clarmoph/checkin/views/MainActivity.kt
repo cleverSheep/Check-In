@@ -1,9 +1,10 @@
-package com.clarmoph.checkin
+package com.clarmoph.checkin.views
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import com.clarmoph.checkin.R
 import com.clarmoph.checkin.adapters.PagerAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*

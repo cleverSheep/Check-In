@@ -26,17 +26,17 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
-            android:name=".RadiusActivity"
+            android:name=".views.RadiusActivity"
             android:label="Set Radius"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".views.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.clarmoph.checkin.MainActivity" />
+                android:value="com.clarmoph.checkin.views.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

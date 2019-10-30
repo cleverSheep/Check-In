@@ -14,6 +14,7 @@ import android.util.Log
 import androidx.core.app.JobIntentService
 import androidx.core.app.NotificationCompat
 import com.clarmoph.checkin.utils.GeofenceErrorMessages
+import com.clarmoph.checkin.views.MainActivity
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingEvent
 

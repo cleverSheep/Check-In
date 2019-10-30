@@ -1,10 +1,11 @@
-package com.clarmoph.checkin
+package com.clarmoph.checkin.views
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.clarmoph.checkin.R
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
