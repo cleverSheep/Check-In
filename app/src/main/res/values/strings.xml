@@ -28,6 +28,11 @@
     <string name="timer_text_hint">35</string>
     <string name="timer_seconds">Seconds</string>
 
+    <string name="geofence_transition_notification_text">Click notification to return to app</string>
+    <string name="geofence_transition_entered">Entered</string>
+    <string name="geofence_transition_exited">Exited</string>
+    <string name="unknown_geofence_transition">Unknown Transition</string>
+
     <!-- Error strings -->
     <string name="geofence_not_available">Geofence service is not available now</string>
     <string name="geofence_too_many_geofences">Your app has registered too many geofences</string>
