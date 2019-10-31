@@ -1,10 +1,17 @@
 package com.clarmoph.checkin.utils
 
+import android.Manifest
+
+
 class GeofenceUtil {
 
     companion object {
 
-        const val GEOFENCE_ID: String = "JOYNER"
+        const val GEOFENCE_ID: String = "Howell Science"
+
+        val GEOFENCE_PERMISSIONS = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+
+        const val LOCATION_REQUEST_CODE = 1
 
         /**
          * Used to define the radius of the geofence. Temporarily hardcoded for ease

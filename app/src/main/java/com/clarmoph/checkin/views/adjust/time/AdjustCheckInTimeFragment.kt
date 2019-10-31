@@ -58,7 +58,7 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
      */
     private fun startLocationTracking() {
         for (listener in mListeners) {
-            listener.onStartTracking()
+            listener.requestLocationPermission()
         }
 
         val snackbar = Snackbar.make(
@@ -73,7 +73,7 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
     }
 
     interface Listener {
-        fun onStartTracking() {}
+        fun requestLocationPermission() {}
     }
 
     fun registerListener(listener: Listener) {

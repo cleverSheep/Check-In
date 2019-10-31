@@ -7,6 +7,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.Manifest
+import android.app.Activity
+import android.content.pm.PackageManager
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.clarmoph.checkin.GeofenceBroadcastReceiver
 import com.clarmoph.checkin.R
 import com.clarmoph.checkin.utils.GeofenceUtil
@@ -19,7 +25,8 @@ import com.google.android.gms.tasks.Task
 
 @Suppress("JoinDeclarationAndAssignment")
 class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
-    AdjustCheckInTimeFragment.Listener, OnCompleteListener<Void> {
+    AdjustCheckInTimeFragment.Listener, ActivityCompat.OnRequestPermissionsResultCallback,
+    OnCompleteListener<Void> {
 
     /**
      * Provides access to the Geofencing API
@@ -48,8 +55,59 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
     /**
      * Begin this work when notified that user has started tracking
      */
-    override fun onStartTracking() {
-        super.onStartTracking()
+    override fun requestLocationPermission() {
+        if (ContextCompat.checkSelfPermission(
+                getContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+
+            // Permission is not granted
+            // Should we show an explanation?
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    getContext() as Activity,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            ) {
+                Toast.makeText(getContext(), "Location permission needed for app functionality.", Toast.LENGTH_LONG)
+                    .show()
+            } else {
+                // No explanation needed, we can request the permission
+                ActivityCompat.requestPermissions(getContext() as Activity, GeofenceUtil.GEOFENCE_PERMISSIONS, GeofenceUtil.LOCATION_REQUEST_CODE)
+            }
+
+        } else {
+            startTracking()
+        }
+    }
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        when (requestCode) {
+            GeofenceUtil.LOCATION_REQUEST_CODE -> {
+
+                // If request is cancelled, the result arrays are empty.
+                if ((grantResults.isEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    // Permission granted
+                    startTracking()
+                } else {
+                    // Permission denied
+                    Toast.makeText(getContext(), "Location permission needed for app functionality.", Toast.LENGTH_LONG)
+                        .show()
+                }
+
+                return
+            }
+        }
+    }
+
+
+    private fun startTracking() {
         mGeofencingClient.addGeofences(getGeofencingRequest(), geofencePendingIntent)
             .addOnCompleteListener(this)
     }
