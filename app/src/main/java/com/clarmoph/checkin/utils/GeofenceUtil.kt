@@ -15,8 +15,8 @@ class GeofenceUtil {
          * Used to define the latitude and longitude of the geofence. Temporarily hardcoded for ease
          * of testing.
          */
-        const val GEOFENCE_LATITUDE: Double = 35.605412
-        const val GEOFENCE_LONGITUDE: Double = -77.363716
+        const val GEOFENCE_LATITUDE: Double = 35.605337
+        const val GEOFENCE_LONGITUDE: Double = -77.365174
 
         /**
          * Used to define the duration of the geofence in seconds. Temporarily hardcoded for ease

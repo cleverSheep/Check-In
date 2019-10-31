@@ -78,7 +78,7 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
      */
     private fun getGeofencingRequest(): GeofencingRequest {
         return GeofencingRequest.Builder().apply {
-            setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_EXIT)
+            setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
             addGeofences(mGeofenceList)
         }.build()
     }
