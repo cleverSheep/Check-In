@@ -9,7 +9,7 @@ class GeofenceUtil {
 
         const val GEOFENCE_ID: String = "Austin"
 
-d          val GEOFENCE_PERMISSIONS = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+        val GEOFENCE_PERMISSIONS = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
 
         const val LOCATION_REQUEST_CODE = 1
 
