@@ -35,12 +35,14 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
     private fun setupButtonClickListener() {
         btn_cont_timer.setOnClickListener(this)
         btn_set_time.setOnClickListener(this)
+        btn_stop_tracking.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when (view?.id) {
             btn_set_time.id -> setDurationInGeofence()
             btn_cont_timer.id -> startLocationTracking()
+            btn_stop_tracking.id -> stopLocationTracking()
         }
     }
 
@@ -57,8 +59,12 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
      * Notify observers to begin 'start tracking' work
      */
     private fun startLocationTracking() {
+
+        btn_cont_timer.visibility = View.INVISIBLE
+        btn_stop_tracking.visibility = View.VISIBLE
+
         for (listener in mListeners) {
-            listener.requestLocationPermission()
+            listener.onRequestLocationPermission()
         }
 
         val snackbar = Snackbar.make(
@@ -72,8 +78,28 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
 
     }
 
+    private fun stopLocationTracking() {
+
+        btn_cont_timer.visibility = View.VISIBLE
+        btn_stop_tracking.visibility = View.INVISIBLE
+
+        for (listener in mListeners) {
+            listener.onStopLocationTracking()
+        }
+        val snackbar = Snackbar.make(
+            activity!!.findViewById(R.id.root_view),
+            "Got it. Location tracking is removed.",
+            Snackbar.LENGTH_INDEFINITE
+        )
+        snackbar.setAction("Ok") { snackbar.dismiss() }
+        snackbar.setActionTextColor(context!!.resources.getColor(R.color.colorPrimary))
+        snackbar.show()
+
+    }
+
     interface Listener {
-        fun requestLocationPermission() {}
+        fun onRequestLocationPermission() {}
+        fun onStopLocationTracking() {}
     }
 
     fun registerListener(listener: Listener) {

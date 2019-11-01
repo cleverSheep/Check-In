@@ -104,6 +104,7 @@
                 android:stateListAnimator="@null"
                 android:text="@string/set_timer"
                 android:textColor="@color/colorPrimary"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -116,6 +117,20 @@
                 android:background="@drawable/btn_background_fill"
                 android:text="@string/start_tracking"
                 android:textColor="#fff"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btn_stop_tracking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_background_stroke"
+                android:stateListAnimator="@null"
+                android:text="@string/stop_tracking"
+                android:textColor="@color/colorPrimary"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

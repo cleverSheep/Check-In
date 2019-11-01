@@ -27,7 +27,6 @@ class SetTimeDialog : DialogFragment() {
                 R.string.ok
             ) { _, id ->
                 if (id == DialogInterface.BUTTON_POSITIVE) {
-                    // TODO: SET UP POSITIVE BUTTON FUNCTIONALITY
                     dismiss()
                 }
             }

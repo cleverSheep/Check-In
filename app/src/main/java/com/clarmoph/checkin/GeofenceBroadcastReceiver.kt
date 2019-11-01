@@ -3,6 +3,7 @@ package com.clarmoph.checkin
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 
 /**
  * Receiver for geofence transition changes.
@@ -23,6 +24,7 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         // Enqueues a JobIntentService passing the context and intent as parameters
+        Log.d(javaClass.simpleName, "Received system location broadcast.")
         GeofenceTransitionsJobIntentService.enqueueWork(context, intent)
     }
 }

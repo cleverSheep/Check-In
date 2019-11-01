@@ -1,15 +1,15 @@
 package com.clarmoph.checkin.views.adjust.time
 
+import android.Manifest
+import android.app.Activity
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.Manifest
-import android.app.Activity
-import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -55,7 +55,7 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
     /**
      * Begin this work when notified that user has started tracking
      */
-    override fun requestLocationPermission() {
+    override fun onRequestLocationPermission() {
         if (ContextCompat.checkSelfPermission(
                 getContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -63,8 +63,6 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
         ) {
 
             // Permission is not granted
-            // Should we show an explanation?
-
             if (ActivityCompat.shouldShowRequestPermissionRationale(
                     getContext() as Activity,
                     Manifest.permission.ACCESS_FINE_LOCATION
@@ -82,6 +80,20 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
         }
     }
 
+    /**
+     * Stop tracking the current geofences
+     */
+    override fun onStopLocationTracking() {
+        mGeofencingClient.removeGeofences(geofencePendingIntent)?.run {
+            addOnSuccessListener {
+                Log.d(javaClass.simpleName, "Geofence Removed")
+            }
+
+            addOnFailureListener {
+                Log.d(javaClass.simpleName, "Failure to remove Geofence")
+            }
+        }
+    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

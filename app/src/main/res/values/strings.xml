@@ -13,6 +13,7 @@
     <string name="back">Back</string>
     <string name="btn_cont">Continue</string>
     <string name="start_tracking">Start Tracking</string>
+    <string name="stop_tracking">Stop Tracking</string>
 
     <!-- Course Time -->
     <string name="adjust_time">Adjust check-in time</string>
@@ -48,5 +49,5 @@
     <string name="geofence_transition_invalid_type">
         Geofence transition error: invalid transition type %1$d
     </string>
-    
+
 </resources>

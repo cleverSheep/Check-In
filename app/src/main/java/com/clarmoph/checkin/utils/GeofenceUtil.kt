@@ -7,9 +7,9 @@ class GeofenceUtil {
 
     companion object {
 
-        const val GEOFENCE_ID: String = "Howell Science"
+        const val GEOFENCE_ID: String = "Austin"
 
-        val GEOFENCE_PERMISSIONS = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+d          val GEOFENCE_PERMISSIONS = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
 
         const val LOCATION_REQUEST_CODE = 1
 
@@ -22,8 +22,8 @@ class GeofenceUtil {
          * Used to define the latitude and longitude of the geofence. Temporarily hardcoded for ease
          * of testing.
          */
-        const val GEOFENCE_LATITUDE: Double = 35.614363
-        const val GEOFENCE_LONGITUDE: Double = -77.363375
+        const val GEOFENCE_LATITUDE: Double = 35.605878
+        const val GEOFENCE_LONGITUDE: Double = -77.362965
 
         /**
          * Used to define the duration of the geofence in seconds. Temporarily hardcoded for ease
