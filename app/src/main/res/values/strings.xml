@@ -49,5 +49,6 @@
     <string name="geofence_transition_invalid_type">
         Geofence transition error: invalid transition type %1$d
     </string>
+    <string name="insufficient_permissions">Insufficient location permissions</string>
 
 </resources>

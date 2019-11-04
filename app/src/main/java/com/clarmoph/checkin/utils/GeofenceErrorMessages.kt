@@ -2,23 +2,11 @@ package com.clarmoph.checkin.utils
 
 import android.content.Context
 import com.clarmoph.checkin.R
-import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.location.GeofenceStatusCodes
 
 class GeofenceErrorMessages private constructor() {
 
     companion object {
-
-        /**
-         * Returns the error string for a geofencing exception
-         */
-        fun getErrorString(context: Context, e: Exception): String {
-            return if (e is ApiException) {
-                getErrorString(context, e.statusCode)
-            } else {
-                context.resources.getString(R.string.unknown_geofence_error)
-            }
-        }
 
         /**
          * Returns the error string for a geofencing error code

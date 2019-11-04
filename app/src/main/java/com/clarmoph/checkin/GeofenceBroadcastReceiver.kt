@@ -21,7 +21,6 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
      * @param intent sent by Location Services. This intent is provided to Location Services
      *               Services (inside a PendingIntent) when addGeofences() is called
      */
-
     override fun onReceive(context: Context, intent: Intent) {
         // Enqueues a JobIntentService passing the context and intent as parameters
         Log.d(javaClass.simpleName, "Received system location broadcast.")

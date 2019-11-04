@@ -21,7 +21,7 @@ import com.google.android.gms.location.GeofencingEvent
 /**
  * Listener for geofence transition changes.
  *
- * Receives geofence transtion events from Location Services in an Intent containing
+ * Receives geofence transition events from Location Services in an Intent containing
  * the transition type and geofence id(s) that triggered the transition. Creates a notification
  * as the output.
  */

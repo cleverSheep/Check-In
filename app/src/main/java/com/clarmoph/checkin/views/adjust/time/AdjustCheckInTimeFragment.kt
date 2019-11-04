@@ -56,7 +56,7 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
     }
 
     /**
-     * Notify observers to begin 'start tracking' work
+     * Notify observers to add geofences and start location tracking
      */
     private fun startLocationTracking() {
 
@@ -64,7 +64,7 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
         btn_stop_tracking.visibility = View.VISIBLE
 
         for (listener in mListeners) {
-            listener.onRequestLocationPermission()
+            listener.onAddGeofences()
         }
 
         val snackbar = Snackbar.make(
@@ -78,13 +78,16 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
 
     }
 
+    /**
+     * Notify observers to remove geofences and stop location tracking
+     */
     private fun stopLocationTracking() {
 
         btn_cont_timer.visibility = View.VISIBLE
         btn_stop_tracking.visibility = View.INVISIBLE
 
         for (listener in mListeners) {
-            listener.onStopLocationTracking()
+            listener.onRemoveGeofences()
         }
         val snackbar = Snackbar.make(
             activity!!.findViewById(R.id.root_view),
@@ -98,16 +101,14 @@ class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {
     }
 
     interface Listener {
-        fun onRequestLocationPermission() {}
-        fun onStopLocationTracking() {}
+        fun onAddGeofences() {}
+        fun onRemoveGeofences() {}
     }
 
     fun registerListener(listener: Listener) {
         mListeners.add(listener)
     }
 
-    fun unregisterListener(listener: Listener) {
-        mListeners.remove(listener)
-    }
+    // TODO: UNREGISTER THE LISTENERS
 
 }

@@ -18,6 +18,7 @@ class GeofenceUtil {
          * of testing.
          */
         const val GEOFENCE_RADIUS_IN_METERS: Float = 1609F
+        
         /**
          * Used to define the latitude and longitude of the geofence. Temporarily hardcoded for ease
          * of testing.
