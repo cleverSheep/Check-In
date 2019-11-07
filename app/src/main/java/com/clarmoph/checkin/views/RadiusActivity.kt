@@ -9,13 +9,13 @@ import com.clarmoph.checkin.R
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
-import kotlinx.android.synthetic.main.activity_radius.*
+import kotlinx.android.synthetic.main.fragment_setradius.*
 
 class RadiusActivity : AppCompatActivity(), View.OnClickListener, OnSeekChangeListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_radius)
+        setContentView(R.layout.fragment_setradius)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

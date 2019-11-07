@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:checkin="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".views.RadiusActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        checkin:layout_constraintStart_toStartOf="parent"
+        checkin:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            checkin:layout_constraintEnd_toEndOf="parent"
+            checkin:layout_constraintStart_toStartOf="parent"
+            checkin:layout_constraintTop_toTopOf="parent"
+            checkin:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_setradius"
+        style="@style/style_cardview_info"
+        android:layout_width="330dp"
+        android:layout_marginTop="31dp"
+        checkin:layout_constraintBottom_toTopOf="@+id/seekbar_custom"
+        checkin:layout_constraintEnd_toEndOf="parent"
+        checkin:layout_constraintStart_toStartOf="parent"
+        checkin:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/map_content_description"
+            android:src="@drawable/iv_library_proto" />
+
+        <com.clarmoph.checkin.views.custom.ProximityCustomView
+            android:id="@+id/proxi_view"
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="170dp"
+            android:alpha="0.25"
+            checkin:fillColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tv_meters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/bahnscrift"
+            android:text="@string/set_to_meters"
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/style_txt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/bahnscrift"
+            android:text="@string/sample_location_txt"
+            android:textColor="#707070"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="307dp"
+        android:background="#FFF"
+        checkin:layout_constraintBottom_toBottomOf="parent"
+        checkin:layout_constraintEnd_toEndOf="parent"
+        checkin:layout_constraintStart_toStartOf="parent" />
+
+    <com.warkiz.widget.IndicatorSeekBar
+        android:id="@+id/seekbar_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        checkin:isb_indicator_color="@color/colorAccent"
+        checkin:isb_max="50"
+        checkin:isb_progress="25"
+        checkin:isb_show_indicator="rectangle"
+        checkin:isb_show_tick_marks_type="divider"
+        checkin:isb_thumb_color="@color/colorAccent"
+        checkin:isb_tick_marks_color="#FFFFFFFF"
+        checkin:isb_ticks_count="5"
+        checkin:isb_track_background_size="4dp"
+        checkin:isb_track_progress_color="@color/colorAccent"
+        checkin:isb_track_progress_size="4dp"
+        checkin:layout_constraintBottom_toTopOf="@+id/btn_cont_radius" />
+
+    <Button
+        android:id="@+id/btn_cont_radius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/btn_background_fill"
+        android:text="@string/btn_cont"
+        android:textColor="#fff"
+        checkin:layout_constraintBottom_toBottomOf="parent"
+        checkin:layout_constraintEnd_toEndOf="parent"
+        checkin:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

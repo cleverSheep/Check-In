@@ -21,6 +21,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res-main',
+                           'src/main/res-screen/auth',
+                           'src/main/res-screen/student',
+                           'src/main/res-screen/instructor',
+                           'src/main/res-screen/coursesetup',]
+        }
+    }
 }
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {

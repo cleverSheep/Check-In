@@ -3,15 +3,19 @@
     <words>
       <w>autofill</w>
       <w>bahnscrift</w>
+      <w>btns</w>
       <w>cardview</w>
       <w>checkin</w>
       <w>checktime</w>
       <w>clarmoph</w>
+      <w>coursesetup</w>
       <w>descr</w>
       <w>geofence</w>
       <w>geofences</w>
       <w>geofencing</w>
       <w>iitems</w>
+      <w>locationbackground</w>
+      <w>locpin</w>
       <w>seekbar</w>
       <w>setradius</w>
       <w>snackbar</w>

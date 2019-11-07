@@ -7,7 +7,7 @@ import androidx.viewpager.widget.ViewPager
 import com.clarmoph.checkin.R
 import com.clarmoph.checkin.adapters.PagerAdapter
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.coursesetup_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPageChangeListener {
 
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ViewPager.OnPage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.coursesetup_main)
 
         setUpViewPager()
         setUpNavButtonVisibility()

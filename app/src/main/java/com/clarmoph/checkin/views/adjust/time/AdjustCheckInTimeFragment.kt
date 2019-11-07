@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.clarmoph.checkin.R
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_adjust_check_in_time.*
+import kotlinx.android.synthetic.main.fragment_time.*
 
 
 class AdjustCheckInTimeFragment : Fragment(), View.OnClickListener {

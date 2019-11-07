@@ -42,7 +42,7 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
     private val mRootView: View
 
     init {
-        mRootView = inflater.inflate(R.layout.fragment_adjust_check_in_time, parent, false)
+        mRootView = inflater.inflate(R.layout.fragment_time, parent, false)
 
         mGeofencingClient = LocationServices.getGeofencingClient(getContext())
         mGeofenceList = ArrayList()

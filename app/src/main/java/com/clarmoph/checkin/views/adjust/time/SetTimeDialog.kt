@@ -21,7 +21,7 @@ class SetTimeDialog : DialogFragment() {
             val builder = AlertDialog.Builder(it)
 
             val inflater = requireActivity().layoutInflater
-            builder.setView(inflater.inflate(R.layout.dialog_set_time, null))
+            builder.setView(inflater.inflate(R.layout.dialog_time, null))
 
             builder.setPositiveButton(
                 R.string.ok
