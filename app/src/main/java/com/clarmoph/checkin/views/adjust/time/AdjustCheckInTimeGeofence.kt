@@ -87,7 +87,7 @@ class AdjustCheckInTimeGeofence(inflater: LayoutInflater, parent: ViewGroup?) :
     private fun removeGeofences() {
         mGeofencingClient.removeGeofences(geofencePendingIntent)?.run {
             addOnSuccessListener {
-                Log.d(javaClass.simpleName, "Geofence Removed")
+                Log.d(javaClass.simpleName, "Geofence removed")
             }
 
             addOnFailureListener {

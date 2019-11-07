@@ -55,8 +55,8 @@ class ProximityCustomView(context: Context?, attrs: AttributeSet?) : View(contex
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        Log.v("ProximityCustomView", MeasureSpec.toString(widthMeasureSpec));
-        Log.v("ProximityCustomView", MeasureSpec.toString(heightMeasureSpec));
+        Log.v("ProximityCustomView", MeasureSpec.toString(widthMeasureSpec))
+        Log.v("ProximityCustomView", MeasureSpec.toString(heightMeasureSpec))
 
         val desiredWidth = suggestedMinimumWidth + paddingLeft + paddingRight
         val desiredHeight = suggestedMinimumHeight + paddingTop + paddingBottom
