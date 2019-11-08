@@ -52,5 +52,11 @@
     <string name="insufficient_permissions">Insufficient location permissions</string>
     <string name="cancel_course">Cancel course creation.</string>
     <string name="change_mind">Change your mind?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="register">Register</string>
+    <string name="or">OR</string>
 
 </resources>

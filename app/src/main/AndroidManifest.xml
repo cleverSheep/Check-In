@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.clarmoph.checkin">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- Required if your app targets Android 10 (API level 29) or higher -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Required if your app targets Android 10 (API level 29) or higher -->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
@@ -15,11 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".views.AuthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <receiver
-            android:name="com.clarmoph.checkin.GeofenceBroadcastReceiver"
+            android:name=".GeofenceBroadcastReceiver"
             android:enabled="true"
             android:exported="true" />
+
         <service
             android:name=".GeofenceTransitionsJobIntentService"
             android:exported="true"

@@ -7,4 +7,6 @@
     <color name="colorShadow">#F6F6F6</color>
     <color name="colorLightGray">#8D8D8D</color>
     <color name="colorDarkGray">#4E4E4E</color>
+    <color name="colorBorder">#707070</color>
+    <color name="colorInspiration">#ECF0F1</color>
 </resources>
